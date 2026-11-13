@@ -8,26 +8,18 @@ CanBağı; ihtiyaç sahiplerinin uygun donörlere, donörlerin de ihtiyaç duyul
 
 ## 🚀 Anahtar Özellikler
 
-* **Ana Sayfa:** Kutu şeklinde menü
+* **Ana Sayfa:** 
 * **Kayıt ve Giriş Sistemi:**
 * **Form Doğrulama:**
 * **İlan Sistemi (Planlanan):**
 * **Soru-Cevap Alanı (Planlanan):**
 
-## 🛠️ Kullanılan Teknolojiler
-
-* HTML5 (semantik etiketler, formlar)
-* JavaScript ES6 (`let` / `const`, fonksiyonlar, döngüler, `if / else`, `try-catch`)
-* localStorage (kullanıcı ve giriş bilgileri)
-* CSS3 (sonraki aşamada eklenecek)
-* Git & GitHub
-
 
 ## 👩‍💻 Geliştirici / Öğrenci Bilgileri
 
 * **Ad Soyad:** Kübra ORDU
-* **Öğrenci Numarası:** [260184007]
-* **Üniversite / Bölüm:** [İstanbul Gelişim Üniversitesi] / Ön yüz yazılım geliştirme
+* **Öğrenci Numarası:** 260184007
+* **Üniversite / Bölüm:** İstanbul Gelişim Üniversitesi / Ön yüz yazılım geliştirme
 * **Ders:** OYG103 - JavaScript Uygulamaları
 * **Akademik Yıl:** 2026-2027 Güz Dönemi
 * **GitHub Profili:** https://github.com/Kubraordu
