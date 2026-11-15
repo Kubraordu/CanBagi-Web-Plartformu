@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8"> <!-- Türkçe karakterlerlerin bozulmasını engeller -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Telefonda düzgün görünmesini sağlar -->
+    <title>CanBağı</title>
+  
+</head>
+<body>
+
+    <!-- Üst kısım: site adı, logo ve giriş bağlantısı -->
+    <header class="site-header">
+        <img src="assets/images/LOGO.png" alt="CanBağı logosu" class="site-logo" width="80"> <!-- Logo -->
+        <h1>CanBağı</h1>   
+      <a href="#hakkimizda">Hakkımızda</a>                  
+      <a href="giris-yap.html" id="login-link" class="login-button">Giriş Yap</a>  <!-- Giriş sayfasına bağlantı -->
+    </header>
+
+    <hr> <!-- Yatay çizgi -->
+
+    <!-- Ana içerik -->
+    <main class="home-layout">
+
+        <!-- Hasta fotoğrafları: çerçeveli kutu -->
+        <section class="patient-stories"> <!-- <section>: Sayfa içinde ayrı bir bölüm oluşturur -->
+            <fieldset> <!-- Etrafına çerçeve çizer -->
+                <legend><h2>Hastalarımızdan Gelenler</h2></legend> <!-- Çerçevenin başlığı -->
+
+                <div class="story-slider"> <!-- <div>: elemanları bir arada tutan kapsayıcıdır -->
+                    <img id="story-image" src="assets/images/hasta1.jpg" alt="Hasta hikayesi 1" class="story-image" width="300">
+                    <p>
+                        <button id="previous-button" type="button">Önceki</button>
+                        <button id="next-button" type="button">Sonraki</button>
+                    </p>
+                </div>
+            </fieldset>
+        </section>
+
+        <br>
+
+        <!-- Menü: 2x2 tablo, her hücre bir kutu -->
+        <nav class="card-grid"> <!-- <nav>: Sayfanın gezinme menüsünü oluşturur -->
+            <table border="1" cellpadding="20"> <!-- border: çerçeve, cellpadding: hücre içi boşluk -->
+                <tr> <!-- 1. satır -->
+                    <td class="card"><a href="ilan-olustur.html">İlan Oluştur</a></td> <!-- href="ilan-olustur.html": Tıklanınca ilan oluşturma sayfasını açar -->
+                    <td class="card"><a href="ilan-yanitlari.html">İlan Yanıtları</a></td>               <!-- <td>: Tablo hücresi oluşturur -->
+                </tr>
+                <tr> <!-- 2. satır -->
+                    <td class="card"><a href="ilan-ara.html">İlan Ara</a></td>
+                    <td class="card"><a href="gorus.html">Önceden Yaşamış Kişilerle Görüş</a></td>
+                </tr>
+            </table>
+        </nav>
+
+    </main>
+
+    <br>
+
+    <!-- Hakkımızda bölümü: çerçeveli kutu -->
+    <section id="hakkimizda" class="about-section">
+        <fieldset>
+            <legend><h2>Hakkımızda</h2></legend>
+            <p>
+                Platformumuz; kan, kök hücre, kemik iliği ve organ nakli gibi sağlık
+                ihtiyaçlarında ihtiyaç sahipleri ile uygun donörleri bir araya getirmek
+                için hazırlanmıştır. Kullanıcılar kan grubu, şehir ve ilçe gibi
+                kriterlere göre arama yapabilir, ilan oluşturabilir ve ilanlarının
+                güncelliğini yönetebilir.
+            </p>
+            <p>
+                Ayrıca hastalık ve tedavi süreçleri hakkında soru sorabilir, bilgi ve
+                deneyimlerini paylaşabilirsiniz. Amacımız; donör bulma, ihtiyaçları
+                duyurma ve sağlık deneyimlerini paylaşma süreçlerini tek bir platformda
+                toplamaktır.
+            </p>
+        </fieldset> <!-- İçeriğin etrafına çerçeve oluşturur -->
+    </section>
+
+       <!-- Sayfa alt bilgisi: logo, telif hakkı ve hazırlayan bilgisi -->
+    <footer class="site-footer">
+        <img src="assets/images/LOGO.png" alt="CanBağı logosu" width="40">
+        <p>© 2026 CanBağı. Tüm hakları saklıdır.</p>
+        <p>Hazırlayan: Kübra ORDU</p>
+        <p>İletişim: ornek@mail.com</p>
+    </footer>
+
+    <!-- JavaScript dosyası en sonda bağlanır -->
+    <script src="js/main.js"></script> 
+
+</body>
+</html>
