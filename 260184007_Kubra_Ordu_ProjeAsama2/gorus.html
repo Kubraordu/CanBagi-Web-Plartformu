@@ -1,0 +1,78 @@
+<!DOCTYPE html> 
+<html lang="tr"> 
+<head> 
+    <meta charset="UTF-8"> <!-- charset: Türkçe karakterlerin bozulmamasını sağlar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- viewport: sayfanın telefonda ekrana sığmasını sağlar -->
+    <title>Önceden Yaşamış Kişilerle Görüş - CanBağı</title> <!-- title: tarayıcı sekmesinde yazan ad -->
+    
+</head>
+<body> 
+
+    <!-- Üst kısım: logo, site adı ve ana sayfaya dönüş -->
+    <header class="site-ust-kisim"> 
+        <img src="assets/images/LOGO.png" alt="CanBağı logosu" class="site-logo" width="80"> 
+        <h1>CanBağı</h1> 
+        <a href="index.html">Ana Sayfaya Dön</a> <!-- a: bağlantı, href: gidilecek sayfa -->
+    </header>
+
+    <hr> 
+
+    <main> 
+
+        <h2>Önceden Yaşamış Kişilerle Görüş</h2> 
+
+        <!-- Paylaşım formunu açan buton (CSS gelince sağ alta taşınacak) -->
+        <button type="button" id="paylasim-ac-butonu" class="yuzen-buton">+ Paylaşım Yap</button> <!-- button: düğme. type="button": formu göndermez. id: JavaScript'in bulması için -->
+
+        <br><br> 
+
+        <!-- Paylaşım formu -->
+        <form id="paylasim-formu" hidden> <!-- form: bilgi alma formu. hidden: başta görünmez -->
+            <fieldset> <!-- fieldset: etrafına çerçeve çizer -->
+                <legend><h3>Yeni Paylaşım</h3></legend> <!-- legend: çerçevenin başlığı -->
+
+                <p> 
+                    <label for="paylasim-metni">Mesajınız:</label><br> <!-- label: kutunun adı. for: hangi kutuya ait. -->
+                    <textarea id="paylasim-metni" rows="4" cols="40" required minlength="5" maxlength="500"
+                              placeholder="Sorunuzu ya da deneyiminizi yazın"></textarea> <!-- textarea: çok satırlı yazı alanı. required: boş bırakılamaz. placeholder: silik örnek yazı -->
+                </p>
+
+                <p>
+                    <input type="checkbox" id="anonim"> <!-- type="checkbox": onay kutusu -->
+                    <label for="anonim">Adımı gizle</label> <!-- Kutunun yazısı -->
+                </p>
+
+                <p>
+                    <button type="submit">Paylaş</button> <!-- type="submit": formu gönderir -->
+                    <button type="button" id="vazgec-butonu">Vazgeç</button> <!-- Formu kapatan düğme -->
+                </p>
+
+                <p id="form-mesaji"></p> <!-- Hata mesajı buraya yazılır -->
+            </fieldset>
+        </form>
+
+        <!-- Paylaşımların listesi -->
+        <section class="paylasimlar-bolumu"> 
+            <fieldset> <!-- Çerçeve -->
+                <legend><h3>Paylaşımlar</h3></legend> 
+                <div id="paylasim-listesi"></div> <!-- div: kutu. Paylaşımlar JavaScript ile buraya eklenir -->
+            </fieldset>
+        </section>
+
+    </main>
+
+    <br>
+
+    <!-- Sayfa alt bilgisi: -->
+    <footer class="site-alt-kisim"> 
+        <img src="assets/images/LOGO.png" alt="CanBağı logosu" width="40"> 
+        <p>© 2026 CanBağı. Tüm hakları saklıdır.</p> 
+        <p>Hazırlayan: Kübra ORDU</p> 
+        <p>İletişim: ornek@mail.com</p> 
+    </footer>
+
+    <!-- JavaScript dosyası en sonda bağlanır -->
+    <script src="js/gorus.js"></script> 
+
+</body>
+</html>

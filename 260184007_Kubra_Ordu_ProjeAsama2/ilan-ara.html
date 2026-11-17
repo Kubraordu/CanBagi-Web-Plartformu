@@ -1,0 +1,141 @@
+<!DOCTYPE html> 
+<html lang="tr"> 
+<head> 
+    <meta charset="UTF-8"> <!-- charset: Türkçe karakterlerin bozulmamasını sağlar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- viewport: sayfanın telefonda ekrana sığmasını sağlar -->
+    <title>İlan Ara - CanBağı</title> 
+
+</head>
+<body> 
+
+    <!-- Üst kısım: logo, site adı ve ana sayfaya dönüş -->
+    <header class="site-ust-kisim"> 
+        <img src="assets/images/LOGO.png" alt="CanBağı logosu" class="site-logo" width="80"> 
+        <h1>CanBağı</h1> 
+        <a href="index.html">Ana Sayfaya Dön</a> <!-- a: bağlantı. href: gidilecek sayfa -->
+    </header>
+
+    <hr> 
+
+    <main> 
+
+        <!-- Arama formu -->
+        <section class="arama-formu-bolumu"> 
+            <fieldset> <!-- fieldset: etrafına çerçeve çizer -->
+                <legend><h2>İlan Ara</h2></legend> <!-- legend: çerçevenin başlığı -->
+
+                <form id="arama-formu"> <!-- form: bilgi alma formu. id: JavaScript'in bulması için isim -->
+
+                    <p> 
+                        <label for="arama-turu">İlan türü:</label><br> <!-- label: kutunun adı. for: hangi kutuya ait -->
+                        <select id="arama-turu"> <!-- select: açılır liste -->
+                            <option value="">Hepsi</option> <!-- option: listedeki seçenek. value="": boş, yani filtre yok -->
+                            <option value="Kan">Kan</option>
+                            <option value="Kök hücre">Kök hücre</option>
+                            <option value="Kemik iliği">Kemik iliği</option>
+                            <option value="Organ">Organ</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="arama-kan-grubu">Kan grubu:</label><br> 
+                        <select id="arama-kan-grubu"> <!-- Kan grubu açılır listesi -->
+                            <option value="">Hepsi</option>
+                            <option value="A Rh+">A Rh+</option>
+                            <option value="A Rh-">A Rh-</option>
+                            <option value="B Rh+">B Rh+</option>
+                            <option value="B Rh-">B Rh-</option>
+                            <option value="AB Rh+">AB Rh+</option>
+                            <option value="AB Rh-">AB Rh-</option>
+                            <option value="0 Rh+">0 Rh+</option>
+                            <option value="0 Rh-">0 Rh-</option>
+                            <option value="Fark etmez">Fark etmez</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="arama-sehir">Şehir:</label><br> 
+                        <input type="text" id="arama-sehir" placeholder="Örn: İstanbul"> <!-- input: yazı kutusu. type="text": düz yazı. placeholder: kutudaki silik örnek -->
+                    </p>
+
+                    <p>
+                        <label for="arama-ilce">İlçe:</label><br> 
+                        <input type="text" id="arama-ilce" placeholder="Örn: Avcılar"> <!-- İlçe yazı kutusu -->
+                    </p>
+
+                    <p>
+                        <label for="arama-aciliyet">Aciliyet:</label><br> 
+                        <select id="arama-aciliyet"> <!-- Aciliyet açılır listesi -->
+                            <option value="">Hepsi</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Acil">Acil</option>
+                            <option value="Çok acil">Çok acil</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <button type="submit">Ara</button> <!-- type="submit": formu gönderir -->
+                    </p>
+                </form>
+            </fieldset>
+        </section>
+
+        <br> 
+
+        <!-- Arama sonuçları -->
+        <section id="sonuclar" class="sonuclar-bolumu"> <!-- id="sonuclar": arama yapınca sayfa buraya kayar -->
+            <fieldset> <!-- Çerçeve -->
+                <legend><h2>Sonuçlar</h2></legend> 
+                <p id="sonuc-mesaji"></p> <!-- Kaç ilan bulunduğu buraya yazılır. id: JavaScript'in bulması için -->
+                <ul id="sonuc-listesi"></ul> <!-- ul: noktalı liste. Bulunan ilanlar buraya eklenir -->
+            </fieldset>
+        </section>
+
+                <br>
+
+        <!-- Yanıt formu: başta gizli, "İlan Yanıtla" butonuna basınca açılır -->
+        <form id="yanit-formu" hidden> <!-- form: bilgi alma formu. hidden: başta görünmez -->
+            <fieldset> <!-- fieldset: etrafına çerçeve çizer -->
+                <legend><h2>İlana Yanıt Ver</h2></legend> 
+
+                <p id="yanit-ilan-bilgisi"></p> <!-- Yanıtlanan ilanın özeti buraya yazılır -->
+                <p>Yanıtlayan: <span id="yanit-adi"></span></p> <!-- span: yazının bir bölümünü ayırır -->
+                <p>Telefon: <span id="yanit-telefonu"></span></p> <!-- Telefon buraya yazılır -->
+
+                <p>
+                    <label for="yanit-metni">Açıklama:</label><br> <!-- label: kutunun adı -->
+                    <textarea id="yanit-metni" rows="4" cols="40" required minlength="5" maxlength="300"
+                              placeholder="Nasıl yardımcı olabileceğinizi yazın"></textarea> <!-- textarea: çok satırlı yazı alanı. required: boş bırakılamaz -->
+                </p><!-- placeholder: kullanıcı yazmaya başlamadan önce kutunun içindeki örnek metin gösterir-->
+
+                <p>                                                     <!-- input: kullanıcıdan bilgi almak için kullanılan HTML elemanıdır -->
+                    <input type="checkbox" id="yanit-onayi" required> <!-- checkbox: onay kutusu. required: işaretlenmeden gönderilemez -->
+                    <label for="yanit-onayi">Telefon numaramın ilan sahibiyle paylaşılmasını kabul ediyorum</label>
+                </p>
+
+                <p>
+                    <button type="submit">Yanıtı Gönder</button> <!-- type="submit": formu gönderir -->
+                    <button type="button" id="yanit-vazgec-butonu">Vazgeç</button> <!-- Formu kapatan düğme -->
+                </p>
+
+                <p id="yanit-mesaji"></p> <!-- Hata mesajı buraya yazılır -->
+            </fieldset>
+        </form>
+
+    </main>
+
+    <br>
+
+    <!-- Sayfa alt bilgisi: logo, telif hakkı ve hazırlayan bilgisi -->
+    <footer class="site-alt-kisim"> 
+        <img src="assets/images/LOGO.png" alt="CanBağı logosu" width="40"> 
+        <p>© 2026 CanBağı. Tüm hakları saklıdır.</p> 
+        <p>Hazırlayan: Kübra ORDU</p> 
+        <p>İletişim: ornek@mail.com</p> 
+    </footer>
+
+    <!-- JavaScript dosyası en sonda bağlanır -->
+    <script src="js/ilan-ara.js"></script> <!-- script: JavaScript dosyasını sayfaya bağlar. src: dosya yolu -->
+
+</body>
+</html>

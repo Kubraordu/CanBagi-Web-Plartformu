@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8"> <!-- Türkçe karakterlerin bozulmasını engeller -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Telefonda düzgün görünmesini sağlar -->
+    <title>İlan Oluştur - CanBağı</title>
+   
+</head>
+<body>
+
+    <!-- Üst kısım: logo, site adı ve ana sayfaya dönüş -->
+    <header class="site-ust-kisim">
+        <img src="assets/images/LOGO.png" alt="CanBağı logosu" class="site-logo" width="80">
+        <h1>CanBağı</h1>
+        <a href="index.html">Ana Sayfaya Dön</a>
+    </header>
+
+    <hr>
+
+    <main>
+
+        <!-- İlan formu -->
+        <section class="ilan-formu-bolumu">
+            <fieldset>  <!-- fieldset: etrafına çerçeve çizer -->
+                <legend><h2>İlan Oluştur</h2></legend>
+
+                <form id="ilan-formu"> <!-- form: bilgi alma formu. id: JavaScript'in bulması için isim -->
+
+                    <p> <!-- İlan türü -->
+                        <label for="ilan-turu">İlan türü:</label><br> <!-- label: kutunun etiketi. for: hangi kutuya ait olduğu -->
+                        <select id="ilan-turu" required>  <!-- select: açılır liste. required: boş bırakılamaz -->
+                            <option value="">Seçiniz</option> <!-- option: listedeki seçenek. value: seçilince kaydedilen değer -->
+                            <option value="Kan">Kan</option>
+                            <option value="Kök hücre">Kök hücre</option>
+                            <option value="Kemik iliği">Kemik iliği</option>
+                            <option value="Organ">Organ</option>
+                        </select>
+                    </p>
+
+                    <p> <!-- Kan grubu -->
+                        <label for="kan-grubu">Kan grubu:</label><br>
+                        <select id="kan-grubu" required>  <!-- Kan grubu açılır listesi -->
+                            <option value="">Seçiniz</option>
+                            <option value="A Rh+">A Rh+</option>
+                            <option value="A Rh-">A Rh-</option>
+                            <option value="B Rh+">B Rh+</option>
+                            <option value="B Rh-">B Rh-</option>
+                            <option value="AB Rh+">AB Rh+</option>
+                            <option value="AB Rh-">AB Rh-</option>
+                            <option value="0 Rh+">0 Rh+</option>
+                            <option value="0 Rh-">0 Rh-</option>
+                            <option value="Fark etmez">Fark etmez</option>
+                        </select>
+                    </p>
+
+                    <p> <!-- Şehir -->
+                        <label for="sehir">Şehir:</label><br>
+                        <input type="text" id="sehir" required placeholder="Örn: İstanbul">
+                    </p>
+
+                    <p> <!-- İlçe -->
+                        <label for="ilce">İlçe:</label><br>
+                        <input type="text" id="ilce" required placeholder="Örn: Avcılar">
+                    </p>
+
+                    <p> <!-- Aciliyet -->
+                        <label for="aciliyet">Aciliyet:</label><br>
+                        <select id="aciliyet" required>  <!-- Aciliyet açılır listesi -->
+                            <option value="">Seçiniz</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Acil">Acil</option>
+                            <option value="Çok acil">Çok acil</option>
+                        </select>
+                    </p>
+
+                    <p> <!-- Kaç kişi gerekli -->
+                        <label for="donor-sayisi">Kaç donör gerekli:</label><br>
+                        <input type="number" id="donor-sayisi" required min="1" max="20" value="1"> <!-- type="number": sadece sayı -->
+                    </p>
+
+                    <p> <!-- İletişim telefonu -->
+                        <label for="ilan-telefonu">İletişim telefonu:</label><br>
+                        <input type="tel" id="ilan-telefonu" required placeholder="05XXXXXXXXX"
+                               pattern="05[0-9]{9}" title="05 ile başlayan 11 haneli numara yazın">
+                    </p>  <!-- pattern: 05 ile başlayan 11 hane kuralı -->
+
+                    <p> <!-- İlanın son geçerlilik tarihi -->
+                        <label for="son-tarih">Son geçerlilik tarihi:</label><br>
+                        <input type="date" id="son-tarih" required>
+                    </p>
+
+                    <p> <!-- Açıklama -->
+                        <label for="aciklama">Açıklama:</label><br>
+                        <textarea id="aciklama" rows="4" cols="40" required
+                                  minlength="10" maxlength="300"
+                                  placeholder="Hasta durumu, hastane adı gibi bilgileri kısaca yazın (en az 10 karakter)"></textarea>
+                    </p> <!-- textarea: çok satırlı yazı alanı, rows: satır sayısı, cols: genişlik -->
+
+                    <p>
+                        <button type="submit">İlanı Yayınla</button> <!-- type="submit": formu gönderir -->
+                    </p>
+
+                    <p id="ilan-mesaji"></p> <!-- Sonuç mesajı buraya yazılır. id: JavaScript'in bulması için -->
+                </form>
+            </fieldset>
+        </section>
+
+        <br>
+
+        <!-- Kullanıcının oluşturduğu ilanların listesi -->
+        <section class="ilanlarim-bolumu">
+            <fieldset> <!-- Çerçeve -->
+                <legend><h2>Oluşturduğum İlanlar</h2></legend>
+                <ul id="ilan-listesi"></ul> <!-- ul: noktalı liste. İlanlar JavaScript ile buraya eklenir -->
+            </fieldset>
+        </section>
+
+    </main>
+
+    <br>
+
+    <!-- Sayfa alt bilgisi: logo, telif hakkı ve hazırlayan bilgisi -->
+    <footer class="site-alt-kisim">
+        <img src="assets/images/LOGO.png" alt="CanBağı logosu" width="40">
+        <p>© 2026 CanBağı. Tüm hakları saklıdır.</p>
+        <p>Hazırlayan: Kübra ORDU</p>
+        <p>İletişim: ornek@mail.com</p>
+    </footer>
+
+    <!-- JavaScript dosyası en sonda bağlanır -->
+    <script src="js/ilan-olustur.js"></script>
+
+</body>
+</html>

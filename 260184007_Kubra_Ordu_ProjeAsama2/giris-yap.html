@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8"> <!-- Türkçe karakterlerin bozulmasını engeller -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Telefonda düzgün görünmesini sağlar -->
+    <title>Giriş Yap - CanBağı</title>
+    
+</head>
+<body>
+
+    <!-- Üst kısım: logo, site adı ve ana sayfaya dönüş -->
+    <header class="site-ust-kisim">
+        <img src="assets/images/LOGO.png" alt="CanBağı logosu" class="site-logo" width="80">
+        <h1>CanBağı</h1>
+        <a href="index.html">Ana Sayfaya Dön</a> <!-- <a>: Tıklanabilir bağlantı oluşturur -->
+    </header>
+
+    <hr>
+
+    <main> 
+
+        <!-- Kayıt formu -->
+        <section class="kayit-bolumu"> <!-- Sayfada ayrı bir bölüm oluşturur -->
+            <fieldset>                     <!-- Guruplayıp çerçeve oluşturur -->
+                <legend><h2>Kayıt Ol</h2></legend>
+
+                <form id="kayit-formu"> <!-- Kullanıcı kayıt formunu başlatır -->
+                    <p>
+                        <label for="ad-soyad">Ad Soyad:</label><br>  <!-- label: Giriş alanının adını belirtir -->
+                        <input type="text" id="ad-soyad" required placeholder="Adınız Soyadınız"> <!-- required: Alanın doldurulmasını zorunlu yapar -->
+                    </p>                                                                           <!-- placeholder: Kullanıcıya örnek giriş gösterir -->
+                    <p>
+                        <label for="kayit-eposta">E-posta:</label><br>      <!-- type="email": E-posta giriş alanı oluşturur ve biçimini kontrol eder -->
+                        <input type="email" id="kayit-eposta" required placeholder="ornek@mail.com">
+                    </p>
+                    <p>
+                        <label for="telefon">Telefon:</label><br>
+                        <input type="tel" id="telefon" required placeholder="05XXXXXXXXX"              
+                               pattern="05[0-9]{9}" title="05 ile başlayan 11 haneli numara yazın"> <!-- pattern: Girilecek telefon numarasının biçimini belirler -->
+                    </p>                                                                            <!-- 05[0-9]{9}: Numaranın 05 ile başlamasını ve ardından 9 rakam gelmesini ister -->
+                    <p>
+                        <label for="cinsiyet">Cinsiyet:</label><br>
+                        <select id="cinsiyet" required>             <!-- select: Açılır liste oluşturur -->
+                            <option value="">Seçiniz</option>     <!-- required: Seçim yapılmasını zorunlu tutar -->
+                            <option value="kadın">Kadın</option>  <!-- option: Açılır listedeki seçenekleri oluşturur -->
+                            <option value="erkek">Erkek</option>  <!-- value: Seçilen seçeneğin programlama tarafında kullanılacak değeridir -->
+                            <option value="trans">Trans</option>
+                            <option value="belirtmek-istemiyorum">Belirtmek istemiyorum</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="kayit-sifre">Şifre oluştur:</label><br>
+                        <input type="password" id="kayit-sifre" required minlength="6" placeholder="En az 6 karakter">
+                    </p>   <!-- password: Yazılan şifreyi gizler -->
+                    <p>
+                        <label for="sifre-tekrar">Şifreyi tekrar gir:</label><br>
+                        <input type="password" id="sifre-tekrar" required minlength="6">
+                    </p>  <!-- Kullanıcının oluşturduğu şifreyi tekrar girmesini sağlar -->
+                    <p>
+                        <button type="submit">Kayıt Ol</button>
+                    </p>
+                    <p id="kayit-mesaji"></p> <!-- Kayıt sonucu mesajı buraya yazılır -->
+                </form>
+            </fieldset>
+        </section>
+
+        <br>
+
+        <!-- Giriş formu -->
+        <section class="giris-bolumu">
+            <fieldset>
+                <legend><h2>Giriş Yap</h2></legend>
+
+                <form id="giris-formu">
+                    <p>
+                        <label for="giris-eposta">E-posta:</label><br>   <!-- for="giris-eposta": Etiketi ilgili giriş alanına bağlar -->
+                        <input type="email" id="giris-eposta" required placeholder="ornek@mail.com"> <!-- placeholder: Kullanıcıya örnek e-posta gösterir -->
+                    </p>
+                    <p>
+                        <label for="giris-sifre">Şifre:</label><br>       
+                        <input type="password" id="giris-sifre" required>
+                    </p>
+                    <p>Kalan giriş hakkı: <span id="kalan-hak">5</span></p> <!-- <span>: Metnin belirli bir bölümünü ayrı olarak tanımlar -->
+                    <p>
+                        <button type="submit" id="giris-butonu">Giriş Yap</button>  <!-- type="submit": Tıklandığında formu gönderir -->
+                    </p>
+                    <p id="giris-mesaji"></p> <!-- Giriş sonucu mesajı buraya yazılır -->
+                </form>
+            </fieldset>
+        </section>
+
+    </main>
+
+    <br>
+
+    <!-- Sayfa alt bilgisi -->
+    <footer class="site-alt-kisim">
+        <img src="assets/images/LOGO.png" alt="CanBağı logosu" width="40">
+        <p>© 2026 CanBağı. Tüm hakları saklıdır.</p>
+        <p>Hazırlayan: Kübra ORDU</p>
+        <p>İletişim: ornek@mail.com</p>
+    </footer>
+
+    <!-- JavaScript dosyası en sonda bağlanır -->
+    <script src="js/auth.js"></script>
+
+</body>
+</html>
